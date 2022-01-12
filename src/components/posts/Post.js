@@ -13,10 +13,12 @@ function Post(props) {
   const [content, setContent] = useState(itemContent.content.body);
 
   return (
-    <div className="post card my-3">
+    <div className="post card my-2">
       <div className="card-body">
-        <p>{address}</p>
-        <p>{timePosted}</p>
+        <p className="user">
+          <b>{address}</b>
+          <span className="time"> {timePosted} </span>
+        </p>
         <p>{content}</p>
       </div>
     </div>

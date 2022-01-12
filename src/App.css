@@ -1,0 +1,22 @@
+body {
+    
+}
+
+.overlay {
+    position:fixed;
+    background-color: rgb(100, 0, 201);
+    height:100vh;
+    width:100%;
+}
+
+.main-title{
+    font-weight:bolder;
+}
+
+h1,h2,h3,h4,h5,h6,p,span,div,ul,li,ol,.main-title {
+    color:white;
+}
+
+.card {
+    background-color: #1e1e1e;
+}

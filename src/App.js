@@ -34,6 +34,7 @@ function App(props) {
 
   return (
     <div className="App">
+      <div className="overlay"></div>
       <Navbar />
       <AccountButton
         connectWallet={connectWallet}
