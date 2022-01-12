@@ -4,9 +4,11 @@ function AccountButton(props) {
   return (
     <nav className="navbar fixed-bottom">
       <div className="container">
-        <div className="col-3">
+        <div className="col-2">
           {props.walletAddress ? (
-            props.truncateAddress(props.walletAddress)
+            <div className="account-btn">
+              {props.truncateAddress(props.walletAddress)}
+            </div>
           ) : (
             <a
               id="submit-btn"

@@ -6,6 +6,16 @@
     width:100%;
 }
 
+.account-btn{
+  background-color:#1e1e1e;
+  color:white;
+  padding:10px;
+  padding-left:25px;
+  padding-right:20px;
+  border-radius: 10px;
+  font-weight:bolder;
+}
+
 .main-title{
     font-size:25px;
     font-weight:bolder;
@@ -112,8 +122,6 @@ h1,h2,h3,h4,h5,h6,p,span,div,ul,li,ol,.main-title {
   border-top: 1px solid transparent;
 }
 
-
-
 .time {
     color:rgb(194, 193, 193);
 }
@@ -125,7 +133,7 @@ h1,h2,h3,h4,h5,h6,p,span,div,ul,li,ol,.main-title {
 
 #profile-image {
     padding-top:3px;
-    width:8vw;
+    width:7vw;
     border-radius:50%;
 }
 
