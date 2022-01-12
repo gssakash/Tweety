@@ -8,7 +8,7 @@ function Post(props) {
     props.truncateAddress(itemContent.address)
   );
   const [timePosted, setTimePosted] = useState(() => {
-    return props.timeSince(new Date(itemContent.time + 1000)); //fix this #TODO
+    return props.timeSince(new Date(itemContent.time * 1000)); //fix this #TODO
   });
   const [content, setContent] = useState(itemContent.content.body);
 

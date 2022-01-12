@@ -10,6 +10,15 @@ function Posts(props) {
       refs: ["hall"]
     });
     setLoadedPosts(response.posts);
+
+    const url = "wss://api2.aleph.im/api/ws0/messages?contentTypes=chat";
+
+    const connection = new WebSocket(url);
+
+    connection.onmessage = (e) => {
+      // console.log("Socket Msg: ", JSON.parse(e.data));
+      // setLoadedPosts((existingPosts) => [JSON.parse(e.data), ...existingPosts]);
+    };
   };
 
   useEffect(() => {
@@ -18,6 +27,7 @@ function Posts(props) {
 
   return (
     <div className="posts">
+      <h2>Welcome to Tweety!</h2>
       {loadedPosts.map((post) => (
         <Post
           key={post.item_hash}
