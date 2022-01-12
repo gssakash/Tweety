@@ -57,6 +57,10 @@ function PostFormModal(props) {
               <div></div>
               <div></div>
             </div>
+            <br /> <br />
+            <p className="loader-footer">
+              <b>Please confirm in your wallet.</b>
+            </p>
           </div>
         </Modal.Body>
       ) : (
@@ -77,6 +81,7 @@ function PostFormModal(props) {
               id="modal-post-btn"
               className="btn btn-primary"
               onClick={handleSubmitPost}
+              disabled={postContent === "" || postContent === undefined}
             >
               Post
             </button>
