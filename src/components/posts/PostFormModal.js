@@ -1,6 +1,28 @@
+import { posts } from "aleph-js";
 import React, { useState } from "react";
 
 function PostFormModal(props) {
+  const [postContent, setPostContent] = useState("");
+  const handleUserPost = (e) => {
+    setPostContent(e.target.value);
+  };
+
+  const handleSubmitPost = async (e) => {
+    e.preventDefault();
+    // console.log(postContent);
+    await posts.submit(
+      props.alephAccount.address,
+      "chat",
+      { body: postContent },
+      {
+        account: props.alephAccount,
+        channel: "TEST",
+        api_server: "https://api2.aleph.im",
+        "ref":"hall"
+      }
+    );
+  };
+
   return (
     <div
       className="modal fade"
@@ -22,7 +44,14 @@ function PostFormModal(props) {
               aria-label="Close"
             ></button>
           </div>
-          <div className="modal-body">...</div>
+          <div className="modal-body">
+            <label>Post Here</label>
+            <textarea
+              onChange={handleUserPost}
+              placeholder="Enter your Message..."
+              className="form-control"
+            />
+          </div>
           <div className="modal-footer">
             <button
               type="button"
@@ -31,8 +60,12 @@ function PostFormModal(props) {
             >
               Close
             </button>
-            <button type="button" className="btn btn-primary">
-              Save changes
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={handleSubmitPost}
+            >
+              Post
             </button>
           </div>
         </div>

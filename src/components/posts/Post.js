@@ -18,7 +18,7 @@ function Post(props) {
         <div className="row">
           <div className="col-4">
             <img
-              src="https://lh3.googleusercontent.com/ogw/ADea4I7NuvOfRWCDPCcaEX1oZO1WBADhAEQWWZpPd5MM=s83-c-mo"
+              src="https://i.pinimg.com/736x/3f/94/70/3f9470b34a8e3f526dbdb022f9f19cf7.jpg"
               alt="Profile Pic"
               id="profile-image"
             />

@@ -77,7 +77,8 @@ function App(props) {
         </div>
       </div>
 
-      <PostFormModal />
+      <br/>
+      <PostFormModal alephAccount={alephAccount} />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import Post from "./Post";
 function Posts(props) {
   const [loadedPosts, setLoadedPosts] = useState([]);
 
-  let loadPosts = async () => {
+  const loadPosts = async () => {
     const response = await posts.get_posts("chat", {
       refs: ["hall"]
     });
