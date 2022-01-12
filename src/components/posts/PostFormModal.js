@@ -1,10 +1,16 @@
 import { posts } from "aleph-js";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 
 function PostFormModal(props) {
   const [postContent, setPostContent] = useState("");
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (props.modalOpen) {
+      setLoading(false);
+    }
+  }, [props.modalOpen]);
 
   const handleUserPost = (e) => {
     setPostContent(e.target.value);
@@ -14,6 +20,7 @@ function PostFormModal(props) {
     e.preventDefault();
     setLoading(true);
     // console.log(postContent);
+
     posts
       .submit(
         props.alephAccount.address,
@@ -26,9 +33,6 @@ function PostFormModal(props) {
           ref: "hall"
         }
       )
-      .then((result) => {
-        setLoading(false);
-      })
       .catch((error) => {
         setLoading(false);
       });
@@ -38,15 +42,12 @@ function PostFormModal(props) {
     <Modal show={props.modalOpen}>
       {loading ? (
         <Modal.Body>
-          <div className="progress">
-            <div
-              className="progress-bar"
-              role="progressbar"
-              style={{ width: "25%" }}
-              aria-valuenow="25"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            ></div>
+          <div className="p-5">
+            <div class="lds-facebook">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>{" "}
           </div>
         </Modal.Body>
       ) : (
