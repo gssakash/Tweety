@@ -21,7 +21,7 @@ function App(props) {
     setWalletAddress(accounts[0]);
   };
 
-  //The account data stays saved even after refresh.
+  //The UseEffect ensures that the account data stays saved even after refresh.
   useEffect(() => {
     if (window.ethereum.isConnected()) {
       connectWallet();
@@ -88,7 +88,7 @@ function App(props) {
       <PostFormModal
         alephAccount={alephAccount}
         modalOpen={modalOpen}
-        // setModalOpen={setModalOpen}
+        setModalOpen={setModalOpen}
       />
     </div>
   );

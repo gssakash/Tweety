@@ -1,6 +1,3 @@
-body {
-    
-}
 
 .overlay {
     position:fixed;
@@ -10,12 +7,111 @@ body {
 }
 
 .main-title{
+    font-size:25px;
     font-weight:bolder;
+    padding-left:17px;
+}
+
+.main-title:hover{
+  color:white;
+  cursor: pointer;
 }
 
 h1,h2,h3,h4,h5,h6,p,span,div,ul,li,ol,.main-title {
     color:white;
 }
+
+.submit-btn-container {
+    margin-top:10px;
+}
+
+#submit-btn{
+    background-color: #1e1e1e;
+    padding:10px;
+    padding-left:20px;
+    padding-right:20px;
+    border-radius: 10px;
+    border-color:transparent;
+    margin-bottom:25px;
+    font-weight:600;
+}
+
+#submit-btn:focus{
+  box-shadow: 0 0 0 0 black;
+}
+
+.closer{
+  color:rgb(248, 246, 246);
+  text-decoration: none;
+  font-size:1.3rem;
+}
+
+.closer:hover{
+  color:rgb(196, 193, 193);
+  text-decoration: none;
+}
+
+/* Modal Styles */
+.modal {
+  border-radius: 25px;
+}
+
+.model-header {
+  background-color: black;
+}
+.model-header a {
+  /* color: white !important; */
+  text-decoration: none;
+  font-size: 2rem;
+  border-bottom:none !important;
+}
+
+.modal-content {
+  background-color: #1e1e1e;
+  border-radius:25px;
+}
+
+.modal-content textarea {
+  background-color: #1e1e1e !important;
+  color: white !important;
+  box-shadow:none !important;
+  border: none;
+  resize:none;
+}
+
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+}
+
+#modal-post-btn{
+  background-color: rgb(100, 0, 201);
+  color:white;
+  padding:7.5px;
+  border:3px solid black;
+  padding-left:15px;
+  padding-right:15px;
+  font-size:bolder;
+  border-radius:7.5px;
+}
+
+.modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.75rem;
+  border-top: 1px solid transparent;
+}
+
+
 
 .time {
     color:rgb(194, 193, 193);
@@ -32,18 +128,9 @@ h1,h2,h3,h4,h5,h6,p,span,div,ul,li,ol,.main-title {
     border-radius:50%;
 }
 
-.model-content,modal-open {
-    border-radius:12.5px;
-    background-color: #1e1e1e !important;
-}
-
-.model-content textarea {
-    background-color:#1e1e1e !important;
-    color:white !important;
-    border:none;
-    border-radius:7.5px;
-    box-shadow:none !important;
-    resize:none;
+#model-color {
+  border-radius:15px;
+  background-color:#0f0e0eda !important;
 }
 
 /* Loader CSS */
@@ -54,29 +141,37 @@ h1,h2,h3,h4,h5,h6,p,span,div,ul,li,ol,.main-title {
     width: 80px;
     height: 80px;
   }
+
   .lds-ripple div {
     position: absolute;
-    border: 4px solid blueviolet;
+    border: 4px solid rgb(100, 0, 201);
     opacity: 1;
     border-radius: 50%;
     animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
   }
+
   .lds-ripple div:nth-child(2) {
-    animation-delay: -0.5s;
+    animation-delay: -0.25s;
   }
+
   @keyframes lds-ripple {
     0% {
-      top: 36px;
-      left: 36px;
+      /* top: 36px; */
+      /* left: 36px; */
+      top:50px;
+      left:50px;
       width: 0;
       height: 0;
       opacity: 1;
     }
+
     100% {
       top: 0px;
       left: 0px;
-      width: 72px;
-      height: 72px;
+      width:100px;
+      height:100px;
+      /* width: 72px; */
+      /* height: 72px; */
       opacity: 0;
     }
   }

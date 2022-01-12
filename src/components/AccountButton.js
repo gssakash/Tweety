@@ -9,6 +9,7 @@ function AccountButton(props) {
             props.truncateAddress(props.walletAddress)
           ) : (
             <a
+              id="submit-btn"
               className="btn btn-primary"
               aria-current="page"
               href="/"

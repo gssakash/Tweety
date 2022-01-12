@@ -7,9 +7,14 @@ function PostButton(props) {
   };
 
   return (
-    <div>
-      <button type="button" className="btn btn-primary" onClick={openModal}>
-        Submit Post 
+    <div className="submit-btn-container">
+      <button
+        type="button"
+        id="submit-btn"
+        className="btn btn-primary"
+        onClick={openModal}
+      >
+        Submit Post
       </button>
     </div>
   );
