@@ -9,7 +9,7 @@ function Navbar(props) {
           <a className="navbar-brand main-title" href="/">
             Tweety.
           </a>
-          <PostButton />
+          <PostButton setModalOpen={props.setModalOpen} />
         </div>
       </div>
     </nav>

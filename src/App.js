@@ -10,6 +10,8 @@ function App(props) {
   const [alephAccount, setAlephAccount] = useState();
   const [walletAddress, setWalletAddress] = useState();
 
+  const [modalOpen, setModalOpen] = useState(false);
+
   const connectWallet = async (e) => {
     const { alephAccount, web3 } = await props.connectWeb3(e);
     const accounts = await web3.eth.getAccounts();
@@ -39,31 +41,31 @@ function App(props) {
     var interval = seconds / 31536000;
 
     if (interval > 1) {
-      return Math.floor(interval) + " years";
+      return Math.floor(interval) + " y";
     }
     interval = seconds / 2592000;
     if (interval > 1) {
-      return Math.floor(interval) + " months";
+      return Math.floor(interval) + " m";
     }
     interval = seconds / 86400;
     if (interval > 1) {
-      return Math.floor(interval) + " days";
+      return Math.floor(interval) + " d";
     }
     interval = seconds / 3600;
     if (interval > 1) {
-      return Math.floor(interval) + " hours";
+      return Math.floor(interval) + " h";
     }
     interval = seconds / 60;
     if (interval > 1) {
-      return Math.floor(interval) + " minutes";
+      return Math.floor(interval) + " m";
     }
-    return Math.floor(seconds) + " seconds";
+    return Math.floor(seconds) + " s";
   }
 
   return (
     <div className="App">
       <div className="overlay"></div>
-      <Navbar />
+      <Navbar setModalOpen={setModalOpen} />
       <AccountButton
         connectWallet={connectWallet}
         walletAddress={walletAddress}
@@ -72,13 +74,22 @@ function App(props) {
       <div className="container">
         <div className="row">
           <div className="col-6 offset-3">
-            <Posts truncateAddress={truncateAddress} timeSince={timeSince} />
+            <Posts
+              truncateAddress={truncateAddress}
+              timeSince={timeSince}
+              setModalOpen={setModalOpen}
+              walletAddress={walletAddress}
+            />
           </div>
         </div>
       </div>
 
-      <br/>
-      <PostFormModal alephAccount={alephAccount} />
+      <br />
+      <PostFormModal
+        alephAccount={alephAccount}
+        modalOpen={modalOpen}
+        // setModalOpen={setModalOpen}
+      />
     </div>
   );
 }
