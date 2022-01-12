@@ -17,6 +17,16 @@ h1,h2,h3,h4,h5,h6,p,span,div,ul,li,ol,.main-title {
     color:white;
 }
 
+.time {
+    color:rgb(194, 193, 193);
+}
+
 .card {
     background-color: #1e1e1e;
+}
+
+#profile-image {
+    padding-top:3px;
+    width:8vw;
+    border-radius:50%;
 }

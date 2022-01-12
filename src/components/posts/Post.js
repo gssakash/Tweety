@@ -8,18 +8,28 @@ function Post(props) {
     props.truncateAddress(itemContent.address)
   );
   const [timePosted, setTimePosted] = useState(() => {
-    return new Date(itemContent.time + 1000).toLocaleString();
+    return props.timeSince(new Date(itemContent.time + 1000)); //fix this #TODO
   });
   const [content, setContent] = useState(itemContent.content.body);
 
   return (
     <div className="post card my-2">
       <div className="card-body">
-        <p className="user">
-          <b>{address}</b>
-          <span className="time"> {timePosted} </span>
-        </p>
-        <p>{content}</p>
+        <div className="row">
+          <div className="col-4">
+            <img
+              src="https://lh3.googleusercontent.com/ogw/ADea4I7NuvOfRWCDPCcaEX1oZO1WBADhAEQWWZpPd5MM=s83-c-mo"
+              alt="Profile Pic"
+              id="profile-image"
+            />
+          </div>
+          <div className="col-8">
+            <p className="user">
+              <b>{address}</b> . <span className="time"> {timePosted} </span>
+            </p>
+            <p>{content}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

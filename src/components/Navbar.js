@@ -1,4 +1,5 @@
 import React from "react";
+import PostButton from "./posts/PostButton";
 
 function Navbar(props) {
   return (
@@ -8,6 +9,7 @@ function Navbar(props) {
           <a className="navbar-brand main-title" href="/">
             Tweety.
           </a>
+          <PostButton />
         </div>
       </div>
     </nav>

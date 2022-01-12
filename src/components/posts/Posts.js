@@ -23,6 +23,7 @@ function Posts(props) {
           key={post.item_hash}
           post={post}
           truncateAddress={props.truncateAddress}
+          timeSince={props.timeSince}
         />
       ))}
     </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import PostFormModal from "./components/posts/PostFormModal";
 import Posts from "./components/posts/Posts";
 import AccountButton from "./components/AccountButton";
 
@@ -32,6 +33,33 @@ function App(props) {
     )}`;
   };
 
+  function timeSince(date) {
+    var seconds = Math.floor((new Date() - date) / 1000);
+
+    var interval = seconds / 31536000;
+
+    if (interval > 1) {
+      return Math.floor(interval) + " years";
+    }
+    interval = seconds / 2592000;
+    if (interval > 1) {
+      return Math.floor(interval) + " months";
+    }
+    interval = seconds / 86400;
+    if (interval > 1) {
+      return Math.floor(interval) + " days";
+    }
+    interval = seconds / 3600;
+    if (interval > 1) {
+      return Math.floor(interval) + " hours";
+    }
+    interval = seconds / 60;
+    if (interval > 1) {
+      return Math.floor(interval) + " minutes";
+    }
+    return Math.floor(seconds) + " seconds";
+  }
+
   return (
     <div className="App">
       <div className="overlay"></div>
@@ -44,10 +72,12 @@ function App(props) {
       <div className="container">
         <div className="row">
           <div className="col-6 offset-3">
-            <Posts truncateAddress={truncateAddress} />
+            <Posts truncateAddress={truncateAddress} timeSince={timeSince} />
           </div>
         </div>
       </div>
+
+      <PostFormModal />
     </div>
   );
 }
