@@ -42,12 +42,9 @@ function PostFormModal(props) {
     <Modal show={props.modalOpen}>
       {loading ? (
         <Modal.Body>
-          <div className="p-5">
-            <div class="lds-facebook">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>{" "}
+          <div class="lds-ripple">
+            <div></div>
+            <div></div>
           </div>
         </Modal.Body>
       ) : (
