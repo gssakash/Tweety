@@ -6,7 +6,7 @@ function AccountButton(props) {
       <div className="container">
         <div className="col-3">
           {props.walletAddress ? (
-            props.walletAddress
+            props.truncateAddress(props.walletAddress)
           ) : (
             <a
               className="btn btn-primary"

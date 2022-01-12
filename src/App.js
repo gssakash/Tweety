@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Posts from "./components/posts/Posts";
 import AccountButton from "./components/AccountButton";
 
 function App(props) {
@@ -24,17 +25,25 @@ function App(props) {
     }
   }, []);
 
+  const truncateAddress = (address) => {
+    return `${address.slice(0, 5)}...${address.slice(
+      address.length - 4,
+      address.length
+    )}`;
+  };
+
   return (
     <div className="App">
       <Navbar />
       <AccountButton
         connectWallet={connectWallet}
         walletAddress={walletAddress}
+        truncateAddress={truncateAddress}
       />
       <div className="container">
         <div className="row">
-          <div className="col-9 offset-3">
-            
+          <div className="col-6 offset-3">
+            <Posts truncateAddress={truncateAddress} />
           </div>
         </div>
       </div>
