@@ -32,7 +32,7 @@ https://user-images.githubusercontent.com/52027687/149542234-01c05266-3460-4cea-
 
 
 ## Tech Stack
-Metamask Chrome Extension, Aleph-im, Javascript, ReactJS.
+Metamask Chrome Extension, Aleph-im Javascript SDK, Javascript, ReactJS.
 
 ## Deployment
 <a href="https://tweety.pages.dev/"><img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white"/></a>
