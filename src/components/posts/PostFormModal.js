@@ -1,6 +1,7 @@
 import { posts } from "aleph-js";
 import React, { useState, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
+import swearjar from "swearjar-extended2";
 
 function PostFormModal(props) {
   const [postContent, setPostContent] = useState("");
@@ -13,7 +14,13 @@ function PostFormModal(props) {
   }, [props.modalOpen]);
 
   const handleUserPost = (e) => {
-    setPostContent(e.target.value);
+    let userMessage = e.target.value;
+    if (swearjar.profane(userMessage)) {
+      alert("Such Messages are not Allowed.");
+      props.setModalOpen(false);
+    } else {
+      setPostContent(userMessage);
+    }
   };
 
   const close = (e) => {
